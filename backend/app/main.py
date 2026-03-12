@@ -34,12 +34,12 @@ app.include_router(trace.router)
 app.include_router(wallet.router)
 
 
-@app.get("/health")
+@app.get("/api/health")
 async def health_check():
     return {"status": "healthy", "app": settings.APP_NAME, "version": "1.0.0"}
 
 
-@app.get("/")
+@app.get("/api/")
 async def root():
     return {
         "app": settings.APP_NAME,
