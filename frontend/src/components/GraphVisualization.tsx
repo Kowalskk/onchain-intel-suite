@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import * as d3 from 'd3';
-import type { TraceGraph, GraphNode, GraphEdge } from '../types';
+import type { TraceGraph } from '../types';
 
 interface Props {
     graph: TraceGraph;

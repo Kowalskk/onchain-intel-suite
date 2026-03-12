@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTrace } from './hooks/useTrace';
 import { SearchBar } from './components/SearchBar';
 import { FilterPanel } from './components/FilterPanel';
@@ -8,7 +8,6 @@ import { ThemeToggle } from './components/ThemeToggle';
 
 function App() {
   const {
-    address,
     graph,
     flows,
     tokens,
