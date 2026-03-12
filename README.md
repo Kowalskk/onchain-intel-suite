@@ -14,16 +14,14 @@ novel contracts, and parsing complex DeFi transactions at scale.
 
 ---
 
-## Why this should exist
+## Why Solarized?
 
 Most retail traders rely on laggy dashboards and aggregated metrics. By the time it's on
-a dashboard, the alpha is gone.
+a dashboard, the alpha is gone. Solarized follows the money in real-time.
 
 I needed a system that reads raw RPC data, parses custom program instructions, and spots
-anomalous flows *before* they make the charts.
-
-This repo details the architecture for an enterprise-grade data pipeline tailored for
-Solana's unique (and notoriously difficult to parse) architecture.
+anomalous flows *before* they make the charts. Solarized provides the forensic tools to
+trace funds through complex multi-hop transfers.
 
 ---
 
@@ -40,10 +38,11 @@ See [`docs/architecture.md`](docs/architecture.md) for the high-level infrastruc
                                     [Alerting Engine / Agent API]
 ```
 
-**Key Capabilities Designed:**
-- **Zero-lag parsing:** Directly ingesting blocks vs polling RPCs
-- **Smart Account Labeling:** Heuristics for clustering associated token accounts
-- **Custom Instruction Decoding:** Fallback IDL parsing for unknown programs
+**Key Capabilities:**
+- **Forensic Tracing:** Trace fund flows across multiple hops with interactive graph visualizations.
+- **Smart Account Labeling:** Automated detection of CEXs, DEXs, and known protocols.
+- **Token Analysis:** Real-time balance and transfer tracking for any SPL token.
+- **Unified API:** REST endpoints for programmatic access to forensic data.
 
 ---
 
