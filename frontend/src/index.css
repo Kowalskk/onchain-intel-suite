@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+/* ===== SOLARIZED THEME VARIABLES ===== */
+:root {
+  /* Light mode (default) */
+  --sol-bg-primary:    #fdf6e3;
+  --sol-bg-secondary:  #eee8d5;
+  --sol-text-primary:  #657b83;
+  --sol-text-secondary:#93a1a1;
+  --sol-text-emphasis: #586e75;
+  --sol-border:        #eee8d5;
+  --sol-border-em:     #93a1a1;
+
+  /* Accent colors — same in both modes */
+  --sol-cyan:    #2aa198;
+  --sol-green:   #859900;
+  --sol-red:     #dc322f;
+  --sol-yellow:  #b58900;
+  --sol-blue:    #268bd2;
+  --sol-violet:  #6c71c4;
+  --sol-orange:  #cb4b16;
+  --sol-magenta: #d33682;
+}
+
+.dark {
+  --sol-bg-primary:    #002b36;
+  --sol-bg-secondary:  #073642;
+  --sol-text-primary:  #839496;
+  --sol-text-secondary:#586e75;
+  --sol-text-emphasis: #93a1a1;
+  --sol-border:        #073642;
+  --sol-border-em:     #586e75;
+}
+
+/* ===== BASE STYLES ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--sol-bg-primary);
+  color: var(--sol-text-primary);
+  font-family: 'Inter', system-ui, sans-serif;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, .mono {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--sol-bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--sol-text-secondary); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sol-text-primary); }
+
+/* ===== TEXT SELECTION ===== */
+::selection {
+  background: var(--sol-cyan);
+  color: var(--sol-bg-primary);
+}
+
+/* ===== FOCUS STATES ===== */
+input:focus, select:focus, textarea:focus, button:focus-visible {
+  outline: none;
+  border-color: var(--sol-cyan) !important;
+  box-shadow: 0 0 0 1px var(--sol-cyan);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes pulse-accent {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-pulse-accent { animation: pulse-accent 2s ease-in-out infinite; }
+.animate-fade-in      { animation: fade-in 0.3s ease-out both; }
+.animate-spin-slow    { animation: spin-slow 2s linear infinite; }
+
+/* ===== GRAPH CANVAS (dot-grid background) ===== */
+.graph-container {
+  background:
+    radial-gradient(circle at 1px 1px, var(--sol-border-em) 1px, transparent 0);
+  background-size: 24px 24px;
+  transition: background 0.2s ease;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-inflow   { color: var(--sol-green); }
+.text-outflow  { color: var(--sol-red); }
+.text-accent   { color: var(--sol-cyan); }
+.text-warning  { color: var(--sol-yellow); }
+.text-muted    { color: var(--sol-text-secondary); }
+.text-emphasis { color: var(--sol-text-emphasis); }
+
+.bg-card {
+  background-color: var(--sol-bg-secondary);
+  border: 1px solid var(--sol-border);
+}
+
+.bg-surface {
+  background-color: var(--sol-bg-primary);
+  border: 1px solid var(--sol-border);
+}
+
+.border-accent { border-color: var(--sol-cyan); }
+
+/* ===== BUTTON BASE ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid var(--sol-border);
+  background: var(--sol-bg-secondary);
+  color: var(--sol-text-primary);
+}
+.btn:hover { border-color: var(--sol-cyan); color: var(--sol-cyan); }
+.btn-primary {
+  background: var(--sol-cyan);
+  color: var(--sol-bg-primary);
+  border-color: var(--sol-cyan);
+}
+.btn-primary:hover { background: var(--sol-blue); border-color: var(--sol-blue); }
+
+/* ===== INPUT BASE ===== */
+.input-base {
+  width: 100%;
+  background: var(--sol-bg-primary);
+  color: var(--sol-text-primary);
+  border: 1px solid var(--sol-border-em);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  transition: border-color 0.15s ease;
+}
+.input-base::placeholder { color: var(--sol-text-secondary); }
