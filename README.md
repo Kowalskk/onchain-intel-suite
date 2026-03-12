@@ -1,14 +1,14 @@
 <div align="center">
+  <img src="https://img.icons8.com/isometric/100/sun.png" alt="Solarized Logo" width="80" />
 
-# 🕵️‍♂️ On-Chain Intel Suite
+# Solarized — On-Chain Intelligence Suite
 
-**A modular extraction and analysis engine for Solana institutional data**
+**Institutional-grade Solana forensic tracing and wallet analysis engine**
 
-Architecture and data pipeline specification for tracking smart money, identifying
-novel contracts, and parsing complex DeFi transactions at scale.
+[Live App](https://solarized-sooty.vercel.app) • [API Health](https://solarized-sooty.vercel.app/api/health) • [Documentation](docs/architecture.md)
 
-![Status](https://img.shields.io/badge/Status-Spec_&_Architecture-blue?style=flat-square)
-![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)
+[![Status](https://img.shields.io/badge/Status-Live_on_Vercel-success?style=flat-square)](https://solarized-sooty.vercel.app)
+[![Solana](https://img.shields.io/badge/Solana-9945FF?style=flat-square&logo=solana&logoColor=white)](https://solana.com)
 
 </div>
 
